@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas - Solar System Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="info">
+        <h1>Atlas - Solar System Explorer</h1>
+        <p>Navigate through our solar system in 3D</p>
+    </div>
+
+    <div id="controls">
+        <div class="control-section">
+            <h3>Time Control</h3>
+            <div class="time-controls">
+                <label for="timeSlider">Time Scale:</label>
+                <input type="range" id="timeSlider" min="-100" max="100" value="10" step="1">
+                <span id="timeDisplay">10x</span>
+            </div>
+            <div class="date-controls">
+                <label for="dateInput">Date:</label>
+                <input type="date" id="dateInput">
+                <button id="resetTime">Reset to Now</button>
+            </div>
+            <div id="currentDate"></div>
+        </div>
+
+        <div class="control-section">
+            <h3>Display Options</h3>
+            <div class="toggle-options">
+                <label>
+                    <input type="checkbox" id="togglePlanetLabels" checked>
+                    Show Planet Labels
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleMoonLabels" checked>
+                    Show Moon Labels
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleStarLabels" checked>
+                    Show Star Labels
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleOrbits" checked>
+                    Show Orbits
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleComets">
+                    Show Comets
+                </label>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h3>Legend</h3>
+            <div id="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FFD700;"></div>
+                    <span>Sun (Star)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8B7355;"></div>
+                    <span>Rocky Planets (Mercury, Venus, Earth, Mars)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #DAA520;"></div>
+                    <span>Gas Giants (Jupiter, Saturn)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4169E1;"></div>
+                    <span>Ice Giants (Uranus, Neptune)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #C0C0C0;"></div>
+                    <span>Moons</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #87CEEB;"></div>
+                    <span>Orbital Paths</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h3>Camera Controls</h3>
+            <p>Left Click + Drag: Rotate</p>
+            <p>Right Click + Drag: Pan</p>
+            <p>Scroll: Zoom</p>
+            <button id="resetCamera">Reset Camera</button>
+        </div>
+    </div>
+
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Loading Solar System...</p>
+    </div>
+
+    <!-- Three.js library - using importmap for ES modules -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.150.0/examples/jsm/"
+        }
+    }
+    </script>
+    <!-- Main application script -->
+    <script type="module" src="solar-system.js"></script>
+</body>
+</html>
