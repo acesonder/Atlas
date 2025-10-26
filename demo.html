@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas - Demo/Test Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #demo-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(circle at center, #001a33 0%, #000000 100%);
+        }
+        .demo-planet {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .demo-sun {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 50px #FFD700;
+        }
+        .demo-earth {
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #4488FF, #2244AA);
+            top: 50%;
+            left: calc(50% + 150px);
+            transform: translate(-50%, -50%);
+            animation: orbit 10s linear infinite;
+        }
+        .demo-mars {
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #CD5C5C, #8B3A3A);
+            top: 50%;
+            left: calc(50% + 200px);
+            transform: translate(-50%, -50%);
+            animation: orbit 15s linear infinite;
+        }
+        .demo-jupiter {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #DAA520, #B8860B);
+            top: 50%;
+            left: calc(50% - 250px);
+            transform: translate(-50%, -50%);
+            animation: orbit 20s linear infinite;
+        }
+        @keyframes orbit {
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(0); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(0); }
+        }
+        #demo-note {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #4dd0e1;
+            padding: 15px;
+            border-radius: 8px;
+            z-index: 200;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div id="demo-canvas">
+        <div class="demo-planet demo-sun"></div>
+        <div class="demo-planet demo-earth"></div>
+        <div class="demo-planet demo-mars"></div>
+        <div class="demo-planet demo-jupiter"></div>
+    </div>
+
+    <div id="info">
+        <h1>Atlas - Solar System Explorer</h1>
+        <p>Navigate through our solar system in 3D</p>
+    </div>
+
+    <div id="controls">
+        <div class="control-section">
+            <h3>Time Control</h3>
+            <div class="time-controls">
+                <label for="timeSlider">Time Scale:</label>
+                <input type="range" id="timeSlider" min="-100" max="100" value="10" step="1">
+                <span id="timeDisplay">10x</span>
+            </div>
+            <div class="date-controls">
+                <label for="dateInput">Date:</label>
+                <input type="date" id="dateInput">
+                <button id="resetTime">Reset to Now</button>
+            </div>
+            <div id="currentDate">Current Date: October 26, 2025</div>
+        </div>
+
+        <div class="control-section">
+            <h3>Display Options</h3>
+            <div class="toggle-options">
+                <label>
+                    <input type="checkbox" id="togglePlanetLabels" checked>
+                    Show Planet Labels
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleMoonLabels" checked>
+                    Show Moon Labels
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleStarLabels" checked>
+                    Show Star Labels
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleOrbits" checked>
+                    Show Orbits
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleComets">
+                    Show Comets
+                </label>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h3>Legend</h3>
+            <div id="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FFD700;"></div>
+                    <span>Sun (Star)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8B7355;"></div>
+                    <span>Rocky Planets (Mercury, Venus, Earth, Mars)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #DAA520;"></div>
+                    <span>Gas Giants (Jupiter, Saturn)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4169E1;"></div>
+                    <span>Ice Giants (Uranus, Neptune)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #C0C0C0;"></div>
+                    <span>Moons</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #87CEEB;"></div>
+                    <span>Orbital Paths</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h3>Camera Controls</h3>
+            <p>Left Click + Drag: Rotate</p>
+            <p>Right Click + Drag: Pan</p>
+            <p>Scroll: Zoom</p>
+            <button id="resetCamera">Reset Camera</button>
+        </div>
+    </div>
+
+    <div id="demo-note">
+        <h3 style="margin-top: 0; color: #4dd0e1;">📸 Demo/Test Page</h3>
+        <p style="margin: 0; font-size: 12px;">
+            This is a visual demonstration of the UI. The full 3D solar system 
+            requires opening <strong>index.html</strong> with internet access to load Three.js.
+            This demo shows the control panel layout and basic styling.
+        </p>
+    </div>
+
+    <script>
+        // Simple demo interactions
+        document.getElementById('timeSlider').addEventListener('input', function(e) {
+            const val = e.target.value;
+            document.getElementById('timeDisplay').textContent = 
+                val > 0 ? val + 'x' : val < 0 ? val + 'x (reverse)' : 'Paused';
+        });
+
+        document.getElementById('dateInput').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>

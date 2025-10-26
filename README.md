@@ -16,6 +16,10 @@ A web-based 3D solar system visualization application that allows you to explore
 
 ## Installation & Setup
 
+![Atlas Solar System Explorer Demo](https://github.com/user-attachments/assets/78fee721-78bb-4897-a2f3-d6f88a3ad24a)
+
+*Screenshot of the Atlas Solar System Explorer interface showing the control panel and demo visualization*
+
 ### Quick Start (No Installation Required)
 
 1. **Download or Clone the Repository**
@@ -31,6 +35,11 @@ A web-based 3D solar system visualization application that allows you to explore
    - Drag and drop `index.html` into your browser window
 
    **Note**: The application uses CDN links for Three.js libraries, so an internet connection is required.
+
+3. **Try the Demo** (Optional)
+   - Open `demo.html` to see a static demonstration of the UI and controls
+   - This demo works without internet connection and shows the interface layout
+   - For the full 3D interactive experience, use `index.html` with internet access
 
 ### Local Web Server (Recommended)
 
@@ -185,6 +194,51 @@ You can modify the solar system configuration in `solar-system.js`:
 
 **Problem**: Controls not working
 - **Solution**: Refresh the page, ensure JavaScript is enabled
+
+**Problem**: CDN blocked (corporate/restricted networks)
+- **Solution**: The application requires loading Three.js from unpkg.com CDN. If access is blocked:
+  - Use a different network without restrictions
+  - Download Three.js locally (see advanced setup below)
+
+### Advanced Setup (Offline/CDN-blocked environments)
+
+If you need to run the application without CDN access:
+
+1. Download Three.js library:
+   ```bash
+   mkdir libs
+   cd libs
+   wget https://unpkg.com/three@0.150.0/build/three.module.js
+   wget https://unpkg.com/three@0.150.0/examples/jsm/controls/OrbitControls.js
+   ```
+
+2. Update `index.html` to use local files instead of CDN
+
+## Testing
+
+To verify the application is working correctly:
+
+1. Open the application in your browser
+2. You should see:
+   - A black space background with stars
+   - The Sun in the center (yellow/gold sphere with glow)
+   - 8 planets orbiting around the Sun
+   - Orbital path lines visible around each planet
+   - Control panel on the left side
+   - Time controls, display options, and legend visible
+
+3. Test the controls:
+   - Move the time slider - planets should speed up/slow down
+   - Click and drag on the canvas - view should rotate
+   - Scroll mouse wheel - view should zoom in/out
+   - Toggle "Show Orbits" - orbital lines should appear/disappear
+   - Toggle "Show Comets" - comets should appear with tails
+   - Change the date - simulation should jump to that time
+
+4. Check browser console for errors:
+   - Press F12 to open developer tools
+   - Check Console tab for any errors
+   - All resources should load successfully
 
 ## License
 
