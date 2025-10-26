@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     navButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetSection = this.getAttribute('data-section');
+            const targetElement = document.getElementById(targetSection);
+            
+            // Check if target element exists
+            if (!targetElement) {
+                console.error(`Section with id "${targetSection}" not found`);
+                return;
+            }
             
             // Remove active class from all buttons and sections
             navButtons.forEach(btn => btn.classList.remove('active'));
@@ -14,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Add active class to clicked button and corresponding section
             this.classList.add('active');
-            document.getElementById(targetSection).classList.add('active');
+            targetElement.classList.add('active');
             
             // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -38,8 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add dynamic date update for footer
     const footer = document.querySelector('footer p');
-    const currentYear = new Date().getFullYear();
-    footer.textContent = `© ${currentYear} Atlas - Solar System Explorer | Educational purposes`;
+    if (footer) {
+        const currentYear = new Date().getFullYear();
+        footer.textContent = `© ${currentYear} Atlas - Solar System Explorer | Educational purposes`;
+    }
 });
 
 // Optional: Add keyboard navigation
