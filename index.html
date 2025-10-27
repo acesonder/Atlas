@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas - Solar System Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🌌 Atlas - Solar System Explorer</h1>
+        <p>Explore Comet ATLAS and interstellar spacecraft</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" data-section="comet">Comet ATLAS</button>
+        <button class="nav-btn" data-section="spacecraft">Spacecraft</button>
+        <button class="nav-btn" data-section="about">About</button>
+    </nav>
+
+    <main>
+        <!-- Comet ATLAS Section -->
+        <section id="comet" class="content-section active">
+            <div class="hero-card">
+                <h2>🌠 Comet ATLAS (C/2024 G3)</h2>
+                <div class="comet-info">
+                    <div class="info-card">
+                        <h3>Overview</h3>
+                        <p>Comet ATLAS (C/2024 G3) is an interstellar comet discovered by the ATLAS survey. This remarkable visitor from beyond our solar system is making its way through our cosmic neighborhood.</p>
+                        <ul class="feature-list">
+                            <li><strong>Discovery:</strong> ATLAS (Asteroid Terrestrial-impact Last Alert System)</li>
+                            <li><strong>Type:</strong> Long-period comet, potentially interstellar origin</li>
+                            <li><strong>Status:</strong> Approaching perihelion (closest approach to the Sun)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Unique Characteristics</h3>
+                        <ul class="feature-list">
+                            <li><strong>Brightness:</strong> Expected to brighten as it approaches the Sun</li>
+                            <li><strong>Trajectory:</strong> Hyperbolic orbit suggesting possible extrasolar origin</li>
+                            <li><strong>Composition:</strong> Icy body with potential for spectacular tail development</li>
+                            <li><strong>Visibility:</strong> May become visible to naked eye at peak brightness</li>
+                            <li><strong>Scientific Value:</strong> Provides insights into materials from outside our solar system</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Observational Data</h3>
+                        <div class="data-grid">
+                            <div class="data-item">
+                                <span class="data-label">Orbital Period</span>
+                                <span class="data-value">Unknown (possible parabolic/hyperbolic)</span>
+                            </div>
+                            <div class="data-item">
+                                <span class="data-label">Origin</span>
+                                <span class="data-value">Potentially interstellar</span>
+                            </div>
+                            <div class="data-item">
+                                <span class="data-label">Magnitude</span>
+                                <span class="data-value">Variable (brightening)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacecraft Section -->
+        <section id="spacecraft" class="content-section">
+            <h2>🚀 Interplanetary Spacecraft & Probes</h2>
+            <p class="section-intro">Humanity's ambassadors to the stars - spacecraft that have left or are leaving our solar system</p>
+            
+            <div class="spacecraft-grid">
+                <div class="spacecraft-card">
+                    <h3>🛰️ Voyager 1</h3>
+                    <div class="spacecraft-details">
+                        <p><strong>Status:</strong> <span class="status-active">Active - Interstellar Space</span></p>
+                        <p><strong>Launch Date:</strong> September 5, 1977</p>
+                        <p><strong>Distance from Earth:</strong> ~24 billion km (160+ AU)</p>
+                        <p><strong>Current Status:</strong> First human-made object in interstellar space (crossed heliopause in 2012)</p>
+                        <ul class="achievement-list">
+                            <li>Explored Jupiter and Saturn</li>
+                            <li>Carries Golden Record with sounds and images from Earth</li>
+                            <li>Still transmitting data after 45+ years</li>
+                            <li>Traveling at ~17 km/s relative to the Sun</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="spacecraft-card">
+                    <h3>🛰️ Voyager 2</h3>
+                    <div class="spacecraft-details">
+                        <p><strong>Status:</strong> <span class="status-active">Active - Interstellar Space</span></p>
+                        <p><strong>Launch Date:</strong> August 20, 1977</p>
+                        <p><strong>Distance from Earth:</strong> ~20 billion km (134+ AU)</p>
+                        <p><strong>Current Status:</strong> Second spacecraft in interstellar space (crossed heliopause in 2018)</p>
+                        <ul class="achievement-list">
+                            <li>Only spacecraft to visit Uranus and Neptune</li>
+                            <li>Grand Tour of outer planets</li>
+                            <li>Continues to send scientific data</li>
+                            <li>Traveling at ~15.4 km/s relative to the Sun</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="spacecraft-card">
+                    <h3>🛰️ Pioneer 10</h3>
+                    <div class="spacecraft-details">
+                        <p><strong>Status:</strong> <span class="status-inactive">Inactive - Beyond Solar System</span></p>
+                        <p><strong>Launch Date:</strong> March 2, 1972</p>
+                        <p><strong>Distance from Earth:</strong> ~130+ AU (estimated)</p>
+                        <p><strong>Current Status:</strong> Last signal received in 2003, continuing outward journey</p>
+                        <ul class="achievement-list">
+                            <li>First spacecraft to traverse asteroid belt</li>
+                            <li>First to obtain close-up images of Jupiter</li>
+                            <li>Carries Pioneer plaque with human figures and Earth's location</li>
+                            <li>Heading toward constellation Taurus</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="spacecraft-card">
+                    <h3>🛰️ Pioneer 11</h3>
+                    <div class="spacecraft-details">
+                        <p><strong>Status:</strong> <span class="status-inactive">Inactive - Beyond Solar System</span></p>
+                        <p><strong>Launch Date:</strong> April 5, 1973</p>
+                        <p><strong>Distance from Earth:</strong> ~100+ AU (estimated)</p>
+                        <p><strong>Current Status:</strong> Last signal received in 1995, continuing outward</p>
+                        <ul class="achievement-list">
+                            <li>First spacecraft to study Saturn</li>
+                            <li>Also explored Jupiter</li>
+                            <li>Discovered Saturn's F ring and new moon</li>
+                            <li>Heading toward constellation Aquila</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="spacecraft-card">
+                    <h3>🛰️ New Horizons</h3>
+                    <div class="spacecraft-details">
+                        <p><strong>Status:</strong> <span class="status-active">Active - Kuiper Belt</span></p>
+                        <p><strong>Launch Date:</strong> January 19, 2006</p>
+                        <p><strong>Distance from Earth:</strong> ~58+ AU</p>
+                        <p><strong>Current Status:</strong> Exploring Kuiper Belt, will eventually leave solar system</p>
+                        <ul class="achievement-list">
+                            <li>First mission to Pluto (July 2015)</li>
+                            <li>Explored Kuiper Belt Object Arrokoth (2019)</li>
+                            <li>Fastest spacecraft ever launched from Earth</li>
+                            <li>On trajectory to eventually enter interstellar space</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="spacecraft-card">
+                    <h3>🛰️ Parker Solar Probe</h3>
+                    <div class="spacecraft-details">
+                        <p><strong>Status:</strong> <span class="status-active">Active - Inner Solar System</span></p>
+                        <p><strong>Launch Date:</strong> August 12, 2018</p>
+                        <p><strong>Mission:</strong> Study the Sun's corona</p>
+                        <p><strong>Current Status:</strong> Making close approaches to the Sun</p>
+                        <ul class="achievement-list">
+                            <li>Fastest human-made object (430,000+ mph)</li>
+                            <li>Closest spacecraft to the Sun</li>
+                            <li>Studying solar wind and magnetic fields</li>
+                            <li>Will make multiple solar flybys through 2025</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h2>About Atlas</h2>
+            <div class="info-card">
+                <h3>About This Application</h3>
+                <p>Atlas is an educational web application designed to showcase fascinating celestial objects and humanity's exploration of space.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Information about Comet ATLAS (C/2024 G3), an interstellar visitor</li>
+                    <li>Details on spacecraft and probes exploring beyond our solar system</li>
+                    <li>Interactive navigation between different sections</li>
+                    <li>Real-time status updates on active missions</li>
+                    <li>Educational content about space exploration</li>
+                </ul>
+
+                <h3>Data Sources</h3>
+                <p>Information compiled from NASA, ESA, and other space agencies' publicly available data.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Atlas - Solar System Explorer | Educational purposes</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
